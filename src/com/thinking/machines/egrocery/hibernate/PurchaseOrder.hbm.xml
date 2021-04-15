@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 16 Jan, 2018 9:36:23 PM by Hibernate Tools 4.3.1.Final -->
+<hibernate-mapping>
+    <class name="com.thinking.machines.egrocery.hibernate.PurchaseOrder" table="purchase_order" catalog="egrocerydb" optimistic-lock="version">
+        <id name="referenceNumber" type="long">
+            <column name="reference_number" />
+            <generator class="assigned" />
+        </id>
+        <property name="dateOfOrder" type="date">
+            <column name="date_of_order" length="0" />
+        </property>
+        <property name="timeOfOrder" type="time">
+            <column name="time_of_order" length="0" />
+        </property>
+        <property name="customerCode" type="java.lang.Integer">
+            <column name="customer_code" />
+        </property>
+        <property name="orderStatus" type="java.lang.Character">
+            <column name="order_status" length="1" />
+        </property>
+        <set name="purchaseOrderItems" table="purchase_order_item" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="purchase_order_reference_number" not-null="true" />
+            </key>
+            <one-to-many class="com.thinking.machines.egrocery.hibernate.PurchaseOrderItem" />
+        </set>
+    </class>
+</hibernate-mapping>

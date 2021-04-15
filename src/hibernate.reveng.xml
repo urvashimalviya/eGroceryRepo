@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd" >
+
+<hibernate-reverse-engineering>
+  <table-filter match-catalog="egrocerydb" match-name="brand"/>
+  <table-filter match-catalog="egrocerydb" match-name="category"/>
+  <table-filter match-catalog="egrocerydb" match-name="customer"/>
+  <table-filter match-catalog="egrocerydb" match-name="item"/>
+  <table-filter match-catalog="egrocerydb" match-name="item_unit_of_measurement"/>
+  <table-filter match-catalog="egrocerydb" match-name="operator_purchase_order_mapping"/>
+  <table-filter match-catalog="egrocerydb" match-name="processed_purchase_order"/>
+  <table-filter match-catalog="egrocerydb" match-name="purchase_order"/>
+  <table-filter match-catalog="egrocerydb" match-name="purchase_order_item"/>
+  <table-filter match-catalog="egrocerydb" match-name="registration"/>
+  <table-filter match-catalog="egrocerydb" match-name="shop_operator"/>
+  <table-filter match-catalog="egrocerydb" match-name="unit_of_measurement"/>
+</hibernate-reverse-engineering>

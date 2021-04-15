@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 16 Jan, 2018 9:36:23 PM by Hibernate Tools 4.3.1.Final -->
+<hibernate-mapping>
+    <class name="com.thinking.machines.egrocery.hibernate.Category" table="category" catalog="egrocerydb" optimistic-lock="version">
+        <id name="code" type="int">
+            <column name="code" />
+            <generator class="assigned" />
+        </id>
+        <property name="name" type="string">
+            <column name="name" length="25" not-null="true" unique="true" />
+        </property>
+        <set name="items" table="item" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="category_code" not-null="true" />
+            </key>
+            <one-to-many class="com.thinking.machines.egrocery.hibernate.Item" />
+        </set>
+    </class>
+</hibernate-mapping>

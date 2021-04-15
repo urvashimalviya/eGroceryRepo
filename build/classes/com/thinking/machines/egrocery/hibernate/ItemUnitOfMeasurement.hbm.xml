@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 16 Jan, 2018 9:36:23 PM by Hibernate Tools 4.3.1.Final -->
+<hibernate-mapping>
+    <class name="com.thinking.machines.egrocery.hibernate.ItemUnitOfMeasurement" table="item_unit_of_measurement" catalog="egrocerydb" optimistic-lock="version">
+        <composite-id name="id" class="com.thinking.machines.egrocery.hibernate.ItemUnitOfMeasurementId">
+            <key-property name="itemCode" type="int">
+                <column name="item_code" />
+            </key-property>
+            <key-property name="unitOfMeasurementCode" type="int">
+                <column name="unit_of_measurement_code" />
+            </key-property>
+            <key-property name="brandCode" type="int">
+                <column name="brand_code" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="item" class="com.thinking.machines.egrocery.hibernate.Item" update="false" insert="false" fetch="select">
+            <column name="item_code" not-null="true" />
+        </many-to-one>
+        <many-to-one name="unitOfMeasurement" class="com.thinking.machines.egrocery.hibernate.UnitOfMeasurement" update="false" insert="false" fetch="select">
+            <column name="unit_of_measurement_code" not-null="true" />
+        </many-to-one>
+        <property name="contentUnitOfMeasurementCode" type="int">
+            <column name="content_unit_of_measurement_code" not-null="true" />
+        </property>
+        <property name="contentQuantity" type="int">
+            <column name="content_quantity" not-null="true" />
+        </property>
+        <property name="rate" type="big_decimal">
+            <column name="rate" precision="10" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

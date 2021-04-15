@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+                                         "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+ <session-factory name="">
+  <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+  <property name="hibernate.connection.password">egroceryuser</property>
+  <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/egrocerydb</property>
+  <property name="hibernate.connection.username">egroceryuser</property>
+  <property name="hibernate.dialect">org.hibernate.dialect.MySQLInnoDBDialect</property>
+  <mapping resource="com/thinking/machines/egrocery/hibernate/Brand.hbm.xml"/> 
+    <mapping resource="com/thinking/machines/egrocery/hibernate/Category.hbm.xml"/>  
+    <mapping resource="com/thinking/machines/egrocery/hibernate/Customer.hbm.xml"/>  
+    <mapping resource="com/thinking/machines/egrocery/hibernate/Item.hbm.xml"/> 
+    <mapping resource="com/thinking/machines/egrocery/hibernate/ItemUnitOfMeasurement.hbm.xml"/> 
+   <mapping resource="com/thinking/machines/egrocery/hibernate/PurchaseOrder.hbm.xml"/>
+   <mapping resource="com/thinking/machines/egrocery/hibernate/PurchaseOrderItem.hbm.xml"/> 
+   <mapping resource="com/thinking/machines/egrocery/hibernate/Registration.hbm.xml"/>
+  <mapping resource="com/thinking/machines/egrocery/hibernate/UnitOfMeasurement.hbm.xml"/>
+  <mapping resource="com/thinking/machines/egrocery/hibernate/ShopOperator.hbm.xml"/>
+<mapping resource="com/thinking/machines/egrocery/hibernate/OperatorPurchaseOrderMapping.hbm.xml"/>
+<mapping resource="com/thinking/machines/egrocery/hibernate/ProcessedPurchaseOrder.hbm.xml"/> 
+ </session-factory>
+</hibernate-configuration>

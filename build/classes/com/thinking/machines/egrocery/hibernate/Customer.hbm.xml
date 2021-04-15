@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 16 Jan, 2018 9:36:23 PM by Hibernate Tools 4.3.1.Final -->
+<hibernate-mapping>
+    <class name="com.thinking.machines.egrocery.hibernate.Customer" table="customer" catalog="egrocerydb" optimistic-lock="version">
+        <id name="code" type="java.lang.Integer">
+            <column name="code" />
+            <generator class="identity" />
+        </id>
+        <property name="name" type="string">
+            <column name="name" length="50" not-null="true" unique="true" />
+        </property>
+        <property name="address" type="string">
+            <column name="address" length="500" not-null="true" />
+        </property>
+        <property name="contactNumber" type="string">
+            <column name="contact_number" length="50" not-null="true" />
+        </property>
+        <property name="smsNotificationNumber" type="string">
+            <column name="sms_notification_number" length="12" not-null="true" unique="true" />
+        </property>
+    </class>
+</hibernate-mapping>
